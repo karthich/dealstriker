@@ -1,4 +1,4 @@
-﻿<!-- categories.tpl -->
+<!-- categories.tpl -->
 <legend>{#PLIGG_Visual_AdminPanel_Category_Manage#}</legend>
 <br />
 {literal}

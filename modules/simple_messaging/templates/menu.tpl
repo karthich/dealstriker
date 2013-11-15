@@ -1,4 +1,4 @@
-﻿{config_load file=$simple_messaging_lang_conf}
+{config_load file=$simple_messaging_lang_conf}
 <div class="tabbable simple_message_menu">
 	<ul class="nav nav-tabs">
 		<li{if $modulepage eq "simple_messaging_inbox"} class="active"{/if}><a href="{$my_pligg_base}/module.php?module=simple_messaging&view=inbox"><i class="icon icon-inbox"></i> {#PLIGG_MESSAGING_Inbox#}</a></li>

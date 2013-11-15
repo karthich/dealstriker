@@ -1,4 +1,4 @@
-﻿<!-- template_editor.tpl -->
+<!-- template_editor.tpl -->
 <legend>{#PLIGG_Visual_AdminPanel_Editor#}</legend>
 {if $templatelite.post.open}
 	{* If the open button has been pressed *}

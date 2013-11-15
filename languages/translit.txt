@@ -1,4 +1,4 @@
-﻿; global transliteration
+; global transliteration
 [default]
 « = ""
 » = ""

@@ -1,4 +1,4 @@
-﻿{config_load file=send_announcement_lang_conf}
+{config_load file=send_announcement_lang_conf}
 
 {php}	
 	function announcement()

@@ -1,4 +1,4 @@
-﻿<legend>Math Captcha Settings</legend>
+<legend>Math Captcha Settings</legend>
 
 {if isset($msg)}
 	<div class="alert fade in">

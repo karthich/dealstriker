@@ -1,4 +1,4 @@
-﻿{* Below, wrapped in literal tags, is code that changes the theme of ReCapthca.
+{* Below, wrapped in literal tags, is code that changes the theme of ReCapthca.
    You can change the theme to one of the following values:
     - white : The Pligg default
 	- blackglass : A mostly-black theme

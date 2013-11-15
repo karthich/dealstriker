@@ -1,4 +1,4 @@
-﻿{config_load file=karma_lang_conf}
+{config_load file=karma_lang_conf}
 
 {if $error}
 	<div class="alert alert-error">

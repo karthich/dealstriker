@@ -1,4 +1,4 @@
-﻿<legend>ReCaptcha Configuration</legend>
+<legend>ReCaptcha Configuration</legend>
 
 {if isset($msg)}
 	<div class="alert fade in">

@@ -1,4 +1,4 @@
-﻿{config_load file=admin_snippet_lang_conf}
+{config_load file=admin_snippet_lang_conf}
 
 <legend>{#PLIGG_Admin_Snippet#}</legend>
 <p>{#PLIGG_Admin_Snippet_Instructions_1#}</p>

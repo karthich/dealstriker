@@ -1,4 +1,4 @@
-﻿<!-- user_create.tpl -->
+<!-- user_create.tpl -->
 <script language="JavaScript" type="text/javascript">
 var firstTimeUserNameFlag = true;
 var firstTimeEmailFlag = true;

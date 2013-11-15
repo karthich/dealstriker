@@ -1,4 +1,4 @@
-﻿{config_load file=captcha_lang_conf}
+{config_load file=captcha_lang_conf}
 
 <legend>{#Pligg_Captcha_Settings#}</legend>
 {if isset($msg)}
