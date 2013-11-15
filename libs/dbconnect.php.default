@@ -1,0 +1,9 @@
+<?php
+define("EZSQL_DB_USER", 'a7320092_root');
+define("EZSQL_DB_PASSWORD", 'dealstriker1');
+define("EZSQL_DB_NAME", 'a7320092_pligg');
+define("EZSQL_DB_HOST", 'mysql17.000webhost.com');
+if (!function_exists('gettext')) {
+	function _($s) {return $s;}
+}
+?>
