@@ -914,4 +914,21 @@ table.tablesorter thead tr .headerSortDown {
 
 /************* RECAPTCHA **************/
 /* Apply the iframe class to any iframes that need to display */
-iframe.iframe {display:block} 
+iframe.iframe {display:block}
+
+
+/* Stylle for discount slider */
+
+#slider-bar {
+    width:200px;
+    background-color: rgba(0,0,0,0.1);
+    height:20px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    text-align: center;
+    font-weight: bold;
+    display: inline-block;
+}
+.warning-msg {
+    vertical-align: top;
+}

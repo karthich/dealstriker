@@ -32,8 +32,11 @@ class Link {
 	var $read = true;
 	var $fullread = true;
 	var $voted = false;
+    // store name
 	var $link_field1 = '';
+    // category
 	var $link_field2 = '';
+    // discount %
 	var $link_field3 = '';
 	var $link_field4 = '';
 	var $link_field5 = '';

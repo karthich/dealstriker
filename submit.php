@@ -171,7 +171,8 @@ function do_submit1() {
 	    	$linkres->tags = stripslashes(sanitize($_POST['tags'], 4));
 	    if ($_POST['description'])
 	    	$linkres->content = stripslashes(sanitize($_POST['description'], 4, $Story_Content_Tags_To_Allow));
-
+        if ($_POST['store'])
+            $linkres->title = $_POST['store'];
 	    if ($_POST['category'])
 	    {
 		$cats = explode(',',$_POST['category']);

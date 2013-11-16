@@ -3,20 +3,20 @@
 *************************************}
 <!-- submit_step_2_center.tpl -->
 <div class="submit_page">
-	<legend>{#PLIGG_Visual_Submit2_Details#}</legend>
+	<legend>{#PLIGG_Visual_Submit2_Title_Header#}</legend>
     {if $current_user_level == 'normal'}
         Sorry you do not have the permission to post deals.
     {else}
         {checkActionsTpl location="tpl_pligg_submit_step2_start"}
         <form class="form-horizontal" action="{$URL_submit}" method="post" name="thisform" id="thisform" enctype="multipart/form-data" onsubmit="return checkForm()">
             <div class="col-md-6 submit_step_2_left">
-                <div class="control-group">
-                    <label for="input01" class="control-label">{#PLIGG_Visual_Submit2_Title#}</label>
-                    <div class="controls">
-                        <input type="text" id="title" class="form-control title col-md-4" tabindex="1" name="title" value="{if $submit_title}{$submit_title}{else}{$submit_url_title}{/if}" size="54" maxlength="{$maxTitleLength}" />
-                        <p class="help-inline">{#PLIGG_Visual_Submit2_TitleInstruct#}</p>
-                    </div>
-                </div>
+                {*<div class="control-group">*}
+                    {*<label for="input01" class="control-label">{#PLIGG_Visual_Submit2_Title#}</label>*}
+                    {*<div class="controls">*}
+                        {*<input type="text" id="title" class="form-control title col-md-4" tabindex="1" name="title" value="{if $submit_title}{$submit_title}{else}{$submit_url_title}{/if}" size="54" maxlength="{$maxTitleLength}" />*}
+                        {*<p class="help-inline">{#PLIGG_Visual_Submit2_TitleInstruct#}</p>*}
+                    {*</div>*}
+                {*</div>*}
                 <input type="hidden" name="category" value="1"/>
                 {if $enable_group && $output neq ''}
                     <div class="control-group">
@@ -27,25 +27,78 @@
                     </div>
                 {/if}
                 {checkActionsTpl location="tpl_header_admin_main_comment_subscription"}
-                {*{checkActionsTpl location="tpl_timestamp_stories"}*}
-                {if $enable_tags}
-                    <div class="control-group">
-                        <label for="input01" class="control-label">{#PLIGG_Visual_Submit2_Tags#}</label>
-                        <div class="controls">
-                            <input tabindex="10" type="text" id="tags" class="form-control tags col-md-4" name="tags" data-mode="multiple" value="{$tags_words}" maxlength="{$maxTagsLength}" data-source="[&quot;.net&quot;,&quot;ajax&quot;,&quot;arts&quot;,&quot;apple&quot;,&quot;blog&quot;,&quot;books&quot;,&quot;business&quot;,&quot;celebrity&quot;,&quot;clothing&quot;,&quot;cms&quot;,&quot;coldfusion&quot;,&quot;computer&quot;,&quot;console&quot;,&quot;contest&quot;,&quot;css&quot;,&quot;deal&quot;,&quot;decorating&quot;,&quot;design&quot;,&quot;DIY&quot;,&quot;download&quot;,&quot;education&quot;,&quot;election&quot;,&quot;entertainment&quot;,&quot;enviroment&quot;,&quot;firefox&quot;,&quot;flash&quot;,&quot;food&quot;,&quot;forums&quot;,&quot;free software&quot;,&quot;funny&quot;,&quot;gadget&quot;,&quot;gallery&quot;,&quot;games&quot;,&quot;gifts&quot;,&quot;Google&quot;,&quot;hacking&quot;,&quot;handheld&quot;,&quot;hardware&quot;,&quot;health&quot;,&quot;howto&quot;,&quot;html&quot;,&quot;humor&quot;,&quot;images&quot;,&quot;international&quot;,&quot;internet&quot;,&quot;javascript&quot;,&quot;jobs&quot;,&quot;lifestyle&quot;,&quot;linux&quot;,&quot;mac&quot;,&quot;Microsoft&quot;,&quot;mobile&quot;,&quot;mods&quot;,&quot;money&quot;,&quot;movies&quot;,&quot;music&quot;,&quot;mysql&quot;,&quot;Nintendo&quot;,&quot;open source&quot;,&quot;pc&quot;,&quot;php&quot;,&quot;photoshop&quot;,&quot;Playstation&quot;,&quot;podcast&quot;,&quot;politics&quot;,&quot;portfolio&quot;,&quot;programming&quot;,&quot;rumor&quot;,&quot;science&quot;,&quot;security&quot;,&quot;SEO&quot;,&quot;shopping&quot;,&quot;software&quot;,&quot;space&quot;,&quot;sports&quot;,&quot;technology&quot;,&quot;television&quot;,&quot;templates&quot;,&quot;themes&quot;,&quot;tools&quot;,&quot;toys&quot;,&quot;travel&quot;,&quot;tutorial&quot;,&quot;typography&quot;,&quot;usability&quot;,&quot;video&quot;,&quot;video game&quot;,&quot;web&quot;,&quot;webdesign&quot;,&quot;Wii&quot;,&quot;work&quot;,&quot;Xbox&quot;,&quot;XHTML&quot;,&quot;Yahoo&quot;]" data-items="4" data-delimiter="," data-provide="typeahead">
-                            <p class="help-inline">{#PLIGG_Visual_Submit2_Tags_Example#} {#PLIGG_Visual_Submit2_Tags_Inst2#}</p>
-                        </div>
-                    </div>
-                {/if}
-                {checkActionsTpl location="tpl_pligg_submit_step2_middle"}
                 <div class="control-group">
-                    <label for="input01" class="control-label">{#PLIGG_Visual_Submit2_Description#}</label>
+                    <label for="input01" class="control-label">{#PLIGG_Visual_Submit2_Store_Header#}</label>
                     <div class="controls">
-                        <textarea name="bodytext" tabindex="15" rows="6" id="bodytext" class="form-control bodytext col-md-4" maxlength="{$maxStoryLength}" WRAP="SOFT">{if $submit_url_description}{$submit_url_description}{/if}{$submit_content}</textarea>
-                        <br />
-                        <p class="help-inline">{#PLIGG_Visual_Submit2_DescInstruct#}</p>
+                        <select name="link_field1" class="form-control" id="store">
+                            <option value="Macys">Macys</option>
+                            <option value="ASOS">ASOS</option>
+                            <option value="Kohl's">Kohl's</option>
+                            <option value="Express">Express</option>
+                            <option value="JCPenney">JCPenney</option>
+                        </select>
                     </div>
                 </div>
+
+                <div class="control-group">
+                    <label for="input01" class="control-label">{#PLIGG_Visual_Submit2_Category_Header#}</label>
+                    <div class="controls">
+                        <select name="link_field2" class="form-control" id="store">
+                            <option value="Electronics">Electronics</option>
+                            <option value="Health & Beauty">Health & Beauty</option>
+                            <option value="Clothes">Clothes</option>
+                            <option value="Food">Food</option>
+                            <option value="Furniture">Furniture</option>
+                            <option value="Pets">Pets</option>
+                            <option value="Travel">Travel</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label for="input01" class="control-label">{#PLIGG_Visual_Submit2_Discount_Header#}</label>
+                    <div class="controls">
+                        0% <input type="range" name="link_field3" id="discount-slider" min="0" max="100" value="0"> 100%
+                    </div>
+
+                </div>
+                <div class="control-group">
+                    <div id="slider-bar" style="">
+                        <span class="percentage"></span>
+                    </div>
+                    <span class="simple-msg hide msgs">
+                        Great chance of deal happening!
+                    </span>
+                    <span class="moderate-msg hide msgs">
+                        Medium chance of deal happening!
+                    </span>
+                    <span class="warning-msg hide msgs">
+                        Very low chance of deal happening!
+                    </span>
+                </div>
+
+
+
+
+                {*{checkActionsTpl location="tpl_timestamp_stories"}*}
+                {*{if $enable_tags}*}
+                    {*<div class="control-group">*}
+                        {*<label for="input01" class="control-label">{#PLIGG_Visual_Submit2_Tags#}</label>*}
+                        {*<div class="controls">*}
+                            {*<input tabindex="10" type="text" id="tags" class="form-control tags col-md-4" name="tags" data-mode="multiple" value="{$tags_words}" maxlength="{$maxTagsLength}" data-source="[&quot;.net&quot;,&quot;ajax&quot;,&quot;arts&quot;,&quot;apple&quot;,&quot;blog&quot;,&quot;books&quot;,&quot;business&quot;,&quot;celebrity&quot;,&quot;clothing&quot;,&quot;cms&quot;,&quot;coldfusion&quot;,&quot;computer&quot;,&quot;console&quot;,&quot;contest&quot;,&quot;css&quot;,&quot;deal&quot;,&quot;decorating&quot;,&quot;design&quot;,&quot;DIY&quot;,&quot;download&quot;,&quot;education&quot;,&quot;election&quot;,&quot;entertainment&quot;,&quot;enviroment&quot;,&quot;firefox&quot;,&quot;flash&quot;,&quot;food&quot;,&quot;forums&quot;,&quot;free software&quot;,&quot;funny&quot;,&quot;gadget&quot;,&quot;gallery&quot;,&quot;games&quot;,&quot;gifts&quot;,&quot;Google&quot;,&quot;hacking&quot;,&quot;handheld&quot;,&quot;hardware&quot;,&quot;health&quot;,&quot;howto&quot;,&quot;html&quot;,&quot;humor&quot;,&quot;images&quot;,&quot;international&quot;,&quot;internet&quot;,&quot;javascript&quot;,&quot;jobs&quot;,&quot;lifestyle&quot;,&quot;linux&quot;,&quot;mac&quot;,&quot;Microsoft&quot;,&quot;mobile&quot;,&quot;mods&quot;,&quot;money&quot;,&quot;movies&quot;,&quot;music&quot;,&quot;mysql&quot;,&quot;Nintendo&quot;,&quot;open source&quot;,&quot;pc&quot;,&quot;php&quot;,&quot;photoshop&quot;,&quot;Playstation&quot;,&quot;podcast&quot;,&quot;politics&quot;,&quot;portfolio&quot;,&quot;programming&quot;,&quot;rumor&quot;,&quot;science&quot;,&quot;security&quot;,&quot;SEO&quot;,&quot;shopping&quot;,&quot;software&quot;,&quot;space&quot;,&quot;sports&quot;,&quot;technology&quot;,&quot;television&quot;,&quot;templates&quot;,&quot;themes&quot;,&quot;tools&quot;,&quot;toys&quot;,&quot;travel&quot;,&quot;tutorial&quot;,&quot;typography&quot;,&quot;usability&quot;,&quot;video&quot;,&quot;video game&quot;,&quot;web&quot;,&quot;webdesign&quot;,&quot;Wii&quot;,&quot;work&quot;,&quot;Xbox&quot;,&quot;XHTML&quot;,&quot;Yahoo&quot;]" data-items="4" data-delimiter="," data-provide="typeahead">*}
+                            {*<p class="help-inline">{#PLIGG_Visual_Submit2_Tags_Example#} {#PLIGG_Visual_Submit2_Tags_Inst2#}</p>*}
+                        {*</div>*}
+                    {*</div>*}
+                {*{/if}*}
+                {checkActionsTpl location="tpl_pligg_submit_step2_middle"}
+                {*<div class="control-group">*}
+                    {*<label for="input01" class="control-label">{#PLIGG_Visual_Submit2_Description#}</label>*}
+                    {*<div class="controls">*}
+                        {*<textarea name="bodytext" tabindex="15" rows="6" id="bodytext" class="form-control bodytext col-md-4" maxlength="{$maxStoryLength}" WRAP="SOFT">{if $submit_url_description}{$submit_url_description}{/if}{$submit_content}</textarea>*}
+                        {*<br />*}
+                        {*<p class="help-inline">{#PLIGG_Visual_Submit2_DescInstruct#}</p>*}
+                    {*</div>*}
+                {*</div>*}
                 {if $SubmitSummary_Allow_Edit eq 1}
                     <div class="control-group">
                         <label for="input01" class="control-label">{#PLIGG_Visual_Submit2_Summary#}</label>

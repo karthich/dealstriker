@@ -186,7 +186,7 @@
 	
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
 	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css" media="all" rel="stylesheet" type="text/css" />
-	
+
 	<!--[if lt IE 7]>
 	<script type="text/javascript" src="{$my_pligg_base}/templates/{$the_template}/js/jquery/jquery.dropdown.js"></script>
 	<![endif]-->
@@ -196,6 +196,7 @@
 	<script type="text/javascript" src="{$my_pligg_base}/templates/{$the_template}/js/bootstrap-fileupload.js"></script>
 	<script type="text/javascript" src="{$my_pligg_base}/templates/{$the_template}/js/jquery/jquery.pnotify.js"></script>
 	<script type="text/javascript" src="{$my_pligg_base}/templates/{$the_template}/js/jquery/jquery.masonry.min.js"></script>
+    <script type="text/javascript" src="{$my_pligg_base}/templates/js/main.js"></script>
 	
     {if $pagename eq "topusers"}
 		<script type="text/javascript" src="{$my_pligg_base}/templates/{$the_template}/js/jquery.tablesorter.js"></script>
