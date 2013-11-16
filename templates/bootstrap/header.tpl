@@ -11,13 +11,17 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="{$my_base_url}{$my_pligg_base}">{#PLIGG_Visual_Name#}</a>			
+			<a class="navbar-brand" href="{$my_base_url}{$my_pligg_base}">{#PLIGG_Visual_Name#}</a>
 		</div>
 		<nav role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
 			<ul class="nav navbar-nav">
 				<li {if $pagename eq "published" || $pagename eq "index"}class="active"{/if}><a href="{$my_base_url}{$my_pligg_base}">{#PLIGG_Visual_Home#}</a></li>
 				{checkActionsTpl location="tpl_pligg_navbar_start"}
-				<li {if $pagename eq "submit"}class="active"{/if}><a href="{$URL_submit}">{#PLIGG_Visual_Submit_A_New_Story#}</a></li>
+				<li {if $pagename eq "submit"}class="active"{/if}>
+                    {if $user_level != 'normal' && $user_level != null}
+                        <a href="{$URL_submit}">{#PLIGG_Visual_Submit_A_New_Story#}</a>
+                    {/if}
+                </li>
 				{checkActionsTpl location="tpl_pligg_submit_link_end"}
 				{if $enable_group eq "true"}	
 					<li {if $pagename eq "groups" || $pagename eq "submit_groups" || $pagename eq "group_story"}class="active"{/if}><a href="{$URL_groups}"><span>{#PLIGG_Visual_Groups#}</span></a></li>
@@ -92,6 +96,7 @@
 							$main_smarty->assign('user_names', $user->names);
 							$main_smarty->assign('user_id', $user->id);
 							$main_smarty->assign('user_username', $user->username);
+                            $main_smarty->assign('user_level', $user->level);
 
 						{/php}
 						<img src="{$Avatar_ImgSmall}" onerror="this.src='{$my_pligg_base}/avatars/Avatar_32.png'; this.title='Loading...';" style="height:16px;width:16px;" /> &nbsp;  {$user_logged_in}

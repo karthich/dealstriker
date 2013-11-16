@@ -30,6 +30,9 @@ include(mnminclude.'tags.php');
 include(mnminclude.'search.php');
 include(mnminclude.'smartyvariables.php');
 
+global $current_user;
+
+$main_smarty->assign('current_user_level', $current_user->user_level);
 // module system hook
 $vars = '';
 check_actions('index_top', $vars);

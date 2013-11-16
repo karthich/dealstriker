@@ -236,7 +236,7 @@ function do_submit1() {
 	check_actions('submit_validating_url', $vars);
 	
 	totals_adjust_count('discard', 1);
-	//echo 'id'.$current_user->user_id;
+    $main_smarty->assign('current_user_level', $current_user->user_level);
 	$linkres->status='discard';
 	$linkres->author=$current_user->user_id;
 	$linkres->store();
