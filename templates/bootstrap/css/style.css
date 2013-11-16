@@ -21,12 +21,12 @@ color: #C80700;
 }
 
 .btn-primary {
-	background-color: #2D6CE0;
-    border-color: #185ACC;
+	background-color: #715177;
+    border-color: #3c2640;
     color: #FFFFFF;
 }
 .btn-primary:hover,.btn-primary:active {
-	background-color: #185ACC;
+	background-color: #4c2f51;
     border-color: #2D6CE0;
     color: #FFFFFF;
 }
@@ -119,13 +119,13 @@ font-size:1.0em;
 
 /********************* NAVIGATION MENU ********************/
 .custom_header {
-    background-color: #2D6CE0;
-    border-color: #185ACC;
+    background-color: #4c2f51;
+    border-color: #3c2640;
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
 }
 .custom_header .navbar-collapse {
-    border-color: #185ACC;
+    border-color: #3c2640;
 }
 .custom_header .navbar-brand {
     color: #FFFFFF;
@@ -137,7 +137,7 @@ font-size:1.0em;
     color: #FFFFFF;
 }
 .custom_header .navbar-nav > .active > a, .custom_header .navbar-nav > .active > a:hover {
-    background-color: #185ACC;
+    background-color: #3c2640;
     color: #FFFFFF;
 }
 .custom_header .navbar-toggle {
