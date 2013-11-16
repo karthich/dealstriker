@@ -14,32 +14,7 @@
 					<p class="help-inline">{#PLIGG_Visual_Submit2_TitleInstruct#}</p>
 				</div>
 			</div>
-			<div class="control-group">
-				<label for="input01" class="control-label">{#PLIGG_Visual_Submit2_Category#}</label>
-				<div class="controls">
-					{if $Multiple_Categories}
-						{section name=thecat loop=$submit_cat_array}
-							{$submit_cat_array[thecat].spacercount|repeat_count:'&nbsp;&nbsp;&nbsp;&nbsp;'}
-								 <input type="checkbox" class="form-control" name="category[]" value="{$submit_cat_array[thecat].id}" {if $submit_cat_array[thecat].auto_id == $submit_category  || in_array($cat_array[thecat].auto_id,$submit_additional_cats)}checked{/if}> {$submit_cat_array[thecat].name}<br />							
-						{/section}
-					{else}
-						<select id="category" class="form-control category" tabindex="2" name="category" onchange="if ($('#category option:selected').val()>0) $('#lp-category').text($('#category option:selected').text()); else $('#lp-category').text('');">
-							<option value="">{#PLIGG_Visual_Submit2_CatInstructSelect#}</option>
-							{section name=thecat loop=$submit_cat_array}
-								<option value = "{$submit_cat_array[thecat].auto_id}" {if $submit_cat_array[thecat].auto_id == $submit_category  || in_array($cat_array[thecat].auto_id,$submit_additional_cats)}selected{/if}>
-									{if $submit_cat_array[thecat].spacercount lt $submit_lastspacer}{$submit_cat_array[thecat].spacerdiff|repeat_count:''}{/if}
-									{if $submit_cat_array[thecat].spacercount gt $submit_lastspacer}{/if}
-									{$submit_cat_array[thecat].spacercount|repeat_count:'&nbsp;&nbsp;&nbsp;'}
-									{$submit_cat_array[thecat].name}
-									&nbsp;&nbsp;&nbsp;
-									{assign var=submit_lastspacer value=$submit_cat_array[thecat].spacercount}
-								</option>
-							{/section}
-						</select>
-					{/if}
-					<p class="help-inline">{#PLIGG_Visual_Submit2_CatInstruct#}</p>
-				</div>
-			</div>
+			<input type="hidden" name="category" value="1"/>
 			{if $enable_group && $output neq ''}
 				<div class="control-group">
 					<label for="input01" class="control-label">{#PLIGG_Visual_Group_Submit_story#}</label>
