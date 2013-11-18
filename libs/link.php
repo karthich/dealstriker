@@ -485,6 +485,21 @@ class Link {
 		$smarty->assign('story_comment_count', $this->comments());
 		$smarty->assign('story_status', $this->status);
 		$smarty->assign('story_karma', $this->karma);
+
+        $smarty->assign('deal_title', $this->link_field3 . '% off ' .  $this->link_field2 . ' at ' . $this->link_field1);
+
+        if($this->link_field1 == 'Macys') {
+            $smarty->assign('store_image', 'http://i.imgur.com/EOSfvY9.png');
+        } else if($this->link_field1 == 'ASOS') {
+            $smarty->assign('store_image', 'http://i.imgur.com/oN8iW6T.png');
+        } else if($this->link_field1 == 'Kohl\'s') {
+            $smarty->assign('store_image', 'http://i.imgur.com/U4QK4O9.jpg');
+        } else if($this->link_field1 == 'Express') {
+            $smarty->assign('store_image', 'http://i.imgur.com/lnGxQgq.png');
+        } else if($this->link_field1 == 'JCPenney') {
+            $smarty($this->link_field1, 'http://i.imgur.com/mDM1d31.jpg');
+        }
+
 		
 		if($type == "summary"){
 			if($this->link_summary == ""){

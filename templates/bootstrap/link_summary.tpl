@@ -26,6 +26,7 @@
 			
 		</div>		
 	{/if}
+    <img style="float:left;margin:0 15px 0 0; height: 100px; width: 100px;" src="{$store_image}" alt="Avatar">
 	{checkActionsTpl location="tpl_pligg_story_start"}
 	<div class="headline">
 		{if $Voting_Method eq 2}
@@ -62,22 +63,22 @@
 					<div id="xvote-{$link_shakebox_index}" class="votebutton">
 						{if $anonymous_vote eq "false" and $user_logged_in eq ""}
 							<a data-toggle="modal" href="#LoginModal" class="btn {if $link_shakebox_currentuser_votes eq 1}btn-success{else}btn-default{/if}"><i class="{if $link_shakebox_currentuser_votes eq 1}icon-white {/if}icon-thumbs-up"></i></a>
-							<a data-toggle="modal" href="#LoginModal" class="btn {if $link_shakebox_currentuser_reports eq 1}btn-danger{else}btn-default{/if}"><i class="{if $link_shakebox_currentuser_reports eq 1}icon-white {/if}icon-thumbs-down"></i></a>
+							{*<a data-toggle="modal" href="#LoginModal" class="btn {if $link_shakebox_currentuser_reports eq 1}btn-danger{else}btn-default{/if}"><i class="{if $link_shakebox_currentuser_reports eq 1}icon-white {/if}icon-thumbs-down"></i></a>*}
                         
                         {else}
 							{if $link_shakebox_currentuser_votes eq 0}
 								<!-- Vote For It -->
-								<a class="btn btn-default linkVote_{$link_id}" {if $vote_from_this_ip neq 0 and $user_logged_in eq ""} data-toggle="modal" href="#LoginModal" {else} href="javascript:{$link_shakebox_javascript_vote}" {/if} title="{$title_short}" ><i class="icon-thumbs-up"></i></a>
+								<a class="btn btn-default linkVote_{$link_id}" {if $vote_from_this_ip neq 0 and $user_logged_in eq ""} data-toggle="modal" href="#LoginModal" {else} href="javascript:{$link_shakebox_javascript_vote}" {/if} title="{$deal_title}" ><i class="icon-thumbs-up"></i></a>
 							{elseif $link_shakebox_currentuser_votes eq 1}
 								<!-- Already Voted -->
-								<a class="btn btn-success linkVote_{$link_id}" href="javascript:{$link_shakebox_javascript_unvote}" title="{$title_short}"><i class="icon-white icon-thumbs-up"></i></a>
+								<a class="btn btn-success linkVote_{$link_id}" href="javascript:{$link_shakebox_javascript_unvote}" title="{$deal_title}"><i class="icon-white icon-thumbs-up"></i></a>
 							{/if}
 							{if $link_shakebox_currentuser_reports eq 0}
 								<!-- Bury It -->
-								<a class="btn btn-default linkVote_{$link_id}" {if $report_from_this_ip neq 0 and $user_logged_in eq ""} data-toggle="modal" href="#LoginModal" {else} href="javascript:{$link_shakebox_javascript_report}" {/if} title="{$title_short}" ><i class="icon-thumbs-down"></i></a>
+								{*<a class="btn btn-default linkVote_{$link_id}" {if $report_from_this_ip neq 0 and $user_logged_in eq ""} data-toggle="modal" href="#LoginModal" {else} href="javascript:{$link_shakebox_javascript_report}" {/if} title="{$deal_title}" ><i class="icon-thumbs-down"></i></a>*}
 							{elseif $link_shakebox_currentuser_reports eq 1}
 								<!-- Already Buried -->
-								<a class="btn btn-danger linkVote_{$link_id}"   href="javascript:{$link_shakebox_javascript_unbury}" title="{$title_short}" }><i class="icon-white icon-thumbs-down"></i></a>
+								{*<a class="btn btn-danger linkVote_{$link_id}"   href="javascript:{$link_shakebox_javascript_unbury}" title="{$deal_title}" }><i class="icon-white icon-thumbs-down"></i></a>*}
 							{/if}
 						{/if}
 						<!-- Votes: {$link_shakebox_currentuser_votes} Buries: {$link_shakebox_currentuser_reports} -->
@@ -91,15 +92,15 @@
 				{checkActionsTpl location="tpl_pligg_story_title_start"}
 				{if $use_title_as_link eq true}
 					{if $url_short neq "http://" && $url_short neq "://"}
-						<a href="{$url}" {if $open_in_new_window eq true} target="_blank"{/if} {if $story_status neq "published"}rel="nofollow"{/if}>{$title_short}</a>
+						<a href="{$url}" {if $open_in_new_window eq true} target="_blank"{/if} {if $story_status neq "published"}rel="nofollow"{/if}>{$deal_title}</a>
 					{else}
-						<a href="{$story_url}" {if $open_in_new_window eq true} target="_blank"{/if}>{$title_short}</a>
+						<a href="{$story_url}" {if $open_in_new_window eq true} target="_blank"{/if}>{$deal_title}</a>
 					{/if}
 				 {else}
 					{if $pagename eq "story" && $url_short neq "http://" && $url_short neq "://"}
-						<a href="{$url}" {if $open_in_new_window eq true} target="_blank"{/if} {if $story_status neq "published"}rel="nofollow"{/if}>{$title_short}</a>
+						<a href="{$url}" {if $open_in_new_window eq true} target="_blank"{/if} {if $story_status neq "published"}rel="nofollow"{/if}>{$deal_title}</a>
 					{else} 
-					  <a href="{$story_url}">{$title_short}</a>
+					  <a href="{$story_url}">{$deal_title}</a>
 					{/if}
 				{/if}
 				{checkActionsTpl location="tpl_pligg_story_title_end"}
@@ -193,10 +194,10 @@
 				<iframe height="0px;" width="0px;" frameborder="0" name="add_stories"></iframe>
 				{if $link_mine eq 0}
 					<i class="icon-star"></i> <span id="linksummarySaveLink">
-					<a id="add" linkid="{$link_id}" title="{$title_short}" class="favorite" >{#PLIGG_MiscWords_Save_Links_Save#}</a>
+					<a id="add" linkid="{$link_id}" title="{$deal_title}" class="favorite" >{#PLIGG_MiscWords_Save_Links_Save#}</a>
 				{else}
 					<i class="icon-star-empty"></i> <span id="linksummaryRemoveLink">
-					<a id="remove" linkid="{$link_id}" title="{$title_short}" class="favorite" >{#PLIGG_MiscWords_Save_Links_Remove#}</a>
+					<a id="remove" linkid="{$link_id}" title="{$deal_title}" class="favorite" >{#PLIGG_MiscWords_Save_Links_Remove#}</a>
 				{/if}
 				</span>&nbsp;
 				<span id="stories-{$link_shakebox_index}" class="label label-success" style="display:none;line-height:1em;">{#PLIGG_MiscWords_Save_Links_Success#}</span>
