@@ -1,5 +1,4 @@
 <?php
-set_time_limit(120);
 ini_set('session.gc_maxlifetime', 3600);
 
 include_once('internal/Smarty.class.php');
