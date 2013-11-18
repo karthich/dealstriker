@@ -138,6 +138,9 @@
             <span class="subtext">
                 This user submitted deal needs 500 votes to become a coupon.
             </span>
+            <span class="subtext" style="font-size: 14px; padding-top: 5px;">
+                There is a <strong>{$probability}% </strong> chance this deal will become a coupon
+            </span>
 		</div><!-- /.title -->
 	</div> <!-- /.headline -->
 	<div class="storycontent">

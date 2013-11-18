@@ -487,6 +487,7 @@ class Link {
 		$smarty->assign('story_karma', $this->karma);
 
         $smarty->assign('deal_title', $this->link_field3 . '% off ' .  $this->link_field2 . ' at ' . $this->link_field1);
+        $smarty->assign('probability', 100 - $this->link_field3);
 
         if($this->link_field1 == 'Macys') {
             $smarty->assign('store_image', 'http://i.imgur.com/EOSfvY9.png');
