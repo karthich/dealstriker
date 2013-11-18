@@ -135,6 +135,9 @@
 					<a href="{$url}" {if $open_in_new_window eq true} target="_blank"{/if}  {if $story_status neq "published"}rel="nofollow"{/if}>{$url_short}</a>
 				{/if}
 			</span>
+            <span class="subtext">
+                This user submitted deal needs 500 votes to become a coupon.
+            </span>
 		</div><!-- /.title -->
 	</div> <!-- /.headline -->
 	<div class="storycontent">
